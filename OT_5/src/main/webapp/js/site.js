@@ -79,3 +79,9 @@ function verificaMotivo(motivo) {
     }
   }
 }
+
+$(document).ready(function(){
+	$("header").load("/OT_5/pages/site/general/cabecalho.html")
+	$("nav").load("/OT_5/pages/site/general/menu.html")
+	$("footer").load("/OT_5/pages/site/general/rodape.html")
+})
