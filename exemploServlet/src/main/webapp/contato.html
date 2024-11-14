@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Contato</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Contato</h1>
+        <form id="form-contato" onsubmit="return validarFormulario()" action="insereContato">
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome">
+            </div>
+            <div class="form-group">
+                <label for="endereco">Endereço:</label>
+                <input type="text" id="endereco" name="endereco">
+            </div>
+            <div class="form-group">
+                <label for="telefone">Telefone:</label>
+                <input type="text" id="telefone" name="telefone">
+            </div>
+            <div class="buttons">
+                <button type="submit">Enviar</button>
+                <button type="reset">Limpar</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function validarFormulario() {
+            let nome = document.getElementById("nome").value;
+            let endereco = document.getElementById("endereco").value;
+            let telefone = document.getElementById("telefone").value;
+
+            if (nome === "" || endereco === "" || telefone === "") {
+                alert("Por favor, preencha todos os campos.");
+                return false;
+            }
+
+            if (telefone.length < 10) {
+                alert("O número de telefone deve ter no mínimo 10 dígitos.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+</html>
