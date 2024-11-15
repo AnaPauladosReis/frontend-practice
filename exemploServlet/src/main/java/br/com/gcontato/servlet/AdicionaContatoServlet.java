@@ -1,4 +1,5 @@
-package br.com.contato.servlet;
+package br.com.gcontato.servlet;
+
 import javax.servlet.http.HttpServlet;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -20,8 +21,20 @@ public class AdicionaContatoServlet extends HttpServlet {
 	        throws ServletException, IOException{
 		
 		PrintWriter out = response.getWriter();
-		String nome = request.getParameter("nome");
-		out.println(nome);
+		out.println("<!DOCTYPE html>");
+		out.println("<html>");
+		out.println("<head>");
+		out.println("<title>Dados do Contato</title>");
+		out.println("</head>");
+		out.println("<body>");
+		out.println("<h1>Dados do Contato</h1>");
+		out.println("<ul>");
+		out.println("<li>Nome: " + request.getParameter("nome") + "</li>");
+		out.println("<li>Endereço: " + request.getParameter("endereco") + "</li>");
+		out.println("<li>Telefone: " + request.getParameter("telefone") + "</li>");
+		out.println("</ul>");
+		out.println("</body>");
+		out.println("</html>");
 		
 	}
 	
